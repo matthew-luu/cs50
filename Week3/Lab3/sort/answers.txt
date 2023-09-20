@@ -1,0 +1,74 @@
+sort1 uses: bubble sort
+
+How do you know?: Bubble sort has is fast when it is a best case scenario. But its relatively slow when we are working with random or worst case scenarios.
+
+sort2 uses: merge sort
+
+How do you know?: Merge sort is the fastest of the three algorithms. Work is shown below, with the relative time complexities of each sort algorithm, and observations.
+
+sort3 uses: selection sort
+
+How do you know?: Selection sort is the slowest when sorting best case scenarios. That is, when the data is already sorted. It has a time complexity of O(n^2).
+
+// Selection Sort
+    Average: O(n^2)
+    Best Case: O(n^2)
+    Worst Case: O(n^2)
+
+    //So on selection sort should be the slowest of the three
+
+// Bubble Sort
+    Average: O(n^2)
+    Best Case: O(n)
+    Worst Case: O(n^2)
+
+    // Bubble sort should be slow on average, but have the fastest best case scenario
+
+// Merge Sort
+    Average: O(nlogn)
+    Best Case: O(nlogn)
+    Worst Case: O(nlogn)
+
+    //So merge sort should be the fastest of the three on average
+
+Times:
+
+sorted 10000
+
+ ./sort1 sorted10000.txt - 0.084s, 0.046s, 0.052s
+
+./sort2 sorted10000.txt - 0.045s, 0.053s, 0.054s
+
+./sort3 sorted10000.txt - 0.118s, 0.128s, 0.139s
+
+
+sorted 50000
+
+./sort1 sorted50000.txt - 0.570s, 0.431s, 0.511s
+
+./sort2 sorted50000.txt - 0.512s, 0.492s, 0.437s
+
+./sort3 sorted50000.txt - 2.242s, 2.174s, 2.266s
+
+// Sort 3 is noticably slower than the other two in this best case scenario. It must be selection sort.
+// More testing is required to find the difference between sort 1 and sort 2.
+// Hypothesis: Since sort2 was slightly faster than sort1 (best case), then sort2 is bubble sort and sort1 is merge sort.
+
+reversed 10000
+
+./sort1 reversed10000.txt - 0.228s, 0.217s, 0.227s
+
+./sort2 reversed10000.txt - 0.059s, 0.066s, 0.055s
+
+
+reversed 50000
+
+./sort1 reversed50000.txt - 4.937s, 4.858s, 4.660s
+
+./sort2 reversed50000.txt - 0.542s, 0.456s, 0.534s
+
+// Hypothesis was incorrect. Sort1 was much slower than sort2 in the worst case scenario, meaning that sort1 is bubble sort, and sort 2 is merge sort.
+
+// Matthew Luu
+// 09-17-2023
+
